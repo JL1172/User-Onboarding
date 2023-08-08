@@ -3,6 +3,7 @@ import axios from "axios";
 import * as yup from "yup";
 import ReactStrap from "reactstrap";
 import styled from 'styled-components';
+import array from "./FifteyStates";
 
 const StyledDiv = styled.div`
 background-image : linear-gradient(45deg, lightseagreen 0%,lightskyblue 25%,lightblue 50%,whitesmoke 100%);
@@ -30,6 +31,42 @@ export default function Form(props) {
                     <label htmlFor='fname'>First Name :</label>
                     <input id = "fname" name = "fname" placeholder='first name'
                     type = "text" value = {fname} onChange={change} />
+
+                    <label htmlFor='lname'>Last Name :</label>
+                    <input id = "lname" name = "lname" value = {lname} 
+                    onChange={change} type='text' placeholder='last name' />
+
+                    <label htmlFor='username'>Username :</label>
+                    <input id = "username" name = "username"
+                    onChange={change} value = {username} type = "text" 
+                    placeholder='username'/>
+
+                    <label htmlFor='email'>Email :</label>
+                    <input id = "email" name = "email" 
+                    value = {email} onChange={change} type='text'
+                    placeholder='email'/>
+
+                    <label htmlFor='password'>Password</label> 
+                    <input id = "password" name = "password" placeholder='password'
+                    value = {password} type = "password" onChange={change} />
+
+                    <label htmlFor='lanuage'>What is your favorite programming language? </label>
+                    <select onChange={change} value = {language} id = "language" name = "language">
+                        <option value = "">--Select One--</option>
+                        <option value = "1">Java</option>
+                        <option value = "2">JavaScript</option>
+                        <option value = "3">Python</option>
+                        <option value = "4">C++</option>
+                        <option value = "5">C#</option>
+                    </select>
+
+                    <label htmlFor='state'>What state are you from?</label>
+                    <select id = "state" value = {state} onChange={change} name = "state">
+                        {array.map((state,i)=> {
+                            return <option key = {i} value = {state.name}>{state.name}</option>
+                        })}
+                    </select>
+
 
                     <button disabled = {disabled}>Submit</button>
                 </form>
