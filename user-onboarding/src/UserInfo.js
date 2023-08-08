@@ -13,7 +13,13 @@ export default function UserInfo(props) {
     console.log(userInfo)
     return (
         <div>
-            {userInfo[0].fname}
+            <div>
+                <h3>Name : {userInfo[0].fname} {userInfo[0].lname}</h3>
+                <h3>Email : {userInfo[0].email} </h3>
+                <h3>Username : {userInfo[0].username}</h3>
+                <h3>Favorite Programming Language : {userInfo[0].language}</h3>
+                <h3>Location : {userInfo[0].state}</h3>
+            </div>
         </div>
     )
 }

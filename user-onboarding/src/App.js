@@ -24,6 +24,20 @@ const ImgStyle = styled.img`
     opacity : 1;
   }
 `
+const styleForLink = {color : "black", textDecoration : "none"}
+const Styled = styled.div`
+display : flex;
+justify-content : baseline;
+a {
+  margin-right : 3rem;
+  font-size : 20px;
+  opacity : .75;
+}
+a:nth-of-type(2):hover {
+    border-bottom : 1px solid black;
+    transform : scale(1.1);
+}
+`
 
 const schema = yup.object().shape({
   fname: yup.string().matches(/^[A-za-z]*$/, "Must only be letters")
@@ -125,8 +139,10 @@ function App() {
   //!useEffect
   return (
     <div>
+      <Styled>
       <Link to="/"><ImgStyle src={menuUrl} /></Link>
-      {isVisible && <Link to = {`user`}>User {userInfo.fname}</Link>}
+      {isVisible && <Link style={styleForLink} to = {`user`}>User {userInfo.fname}</Link>}
+      </Styled>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="form" element={<Form
