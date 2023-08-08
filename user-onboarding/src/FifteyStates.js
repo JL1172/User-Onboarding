@@ -200,4 +200,14 @@ const array = [
       "code": "WY"
     }
   ]
-  export default array;
+  const newArray = [];
+  const result = array.map(n=> {
+    if (n.name) {
+      newArray.push(n.name)
+    }
+    return newArray;
+  }
+    );
+  export default newArray;
+
+

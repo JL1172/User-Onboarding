@@ -3,10 +3,13 @@ import axios from "axios";
 import * as yup from "yup";
 import ReactStrap from "reactstrap";
 import styled from 'styled-components';
-import array from "./FifteyStates";
+import newArray from "./FifteyStates";
 import programmingLanguages from './ProgrammingLanguages';
+import { useNavigate } from 'react-router-dom';
+import {Alert,Button} from "reactstrap";
 
-const red = { color: "rgb(207, 123, 123)" }
+const red = { color : "rgb(207, 123, 123)" }
+const redBack = {backgroundColor : "lightslategray",color: "white"}
 
 const StyledDiv = styled.div`
 background-image : linear-gradient(45deg, lightseagreen 0%,lightskyblue 25%,lightblue 50%,whitesmoke 100%);
@@ -52,6 +55,7 @@ div {
         margin-top : 1rem;
         border : 1px solid lightseagreen;
         border-radius : 5px;
+        margin-bottom : 1rem;
        }
        input:nth-of-type(7) {
         padding-right : 3rem;
@@ -80,12 +84,37 @@ img {
     width : 50px;
     opacity : .75;
 }
+button {
+    color : white;
+    background-color : lightblue;
+    border : none;
+    padding-right : 3rem;
+    padding-left : 3rem;
+    border-radius : 5px;
+    outline :2px solid lightseagreen;
+    &:hover {
+            background-color : white;
+            color : lightblue;
+            box-shadow : none;
+            outline-offset : 4px;
+        }
+   &:active {
+    transform : scale(1.1);
+   }
+}
 `
 const iconUrl = "https://static.thenounproject.com/png/2500459-200.png";
 
 export default function Form(props) {
-    const { disabled, setDisabled, formData, setFormData, formError, setFormError, change, submit } = props;
+    const { disabled, setDisabled, formData, setFormData, formError, setFormError, change, submit, select } = props;
     const { fname, email, lname, username, password, terms, language, state } = formData;
+    const navigate = useNavigate();
+
+    const leave = () => {
+        navigate("/");
+        window.location.reload();
+    }
+    
     return (
         <StyledDiv disabled={disabled}>
             <h1>Sign Up Form<img src={iconUrl} /></h1>
@@ -131,8 +160,8 @@ export default function Form(props) {
                     <label htmlFor='state'>What state are you from?</label>
                     <select id="state" value={state} onChange={change} name="state">
                         <option value="">--Select One--</option>
-                        {array.map((state, i) => {
-                            return <option key={i} value={state.name}>{state.name}</option>
+                        {newArray.map((state, i) => {
+                            return <option key={i} value={state}>{state}</option>
                         })}
                     </select>
                     {formError.state && <p style={red}>*{formError.state}</p>}
@@ -143,6 +172,9 @@ export default function Form(props) {
                     {formError.terms && <p style={red}>*{formError.terms}</p>}
 
                     <input type="submit" disabled={disabled}></input>
+                     {select && <Alert style = {redBack}>Cannot sign in until you sign out</Alert>}
+                    {select && <button onClick={leave} disabled = {false}>Log Out</button>}
+                    
                 </form>
             </div>
         </StyledDiv>
