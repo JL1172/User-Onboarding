@@ -52,6 +52,9 @@ const [formError,setFormError] = useState({
     const valueToUse = evt.target.type === "checkbox" ? checked : value;
     setFormData({...formData, [name] : valueToUse})
   }
+  const submit = evt => {
+    evt.preventDefault();
+  }
 //!End of handlers
   return (
     <div>
@@ -66,6 +69,7 @@ const [formError,setFormError] = useState({
         formError = {formError}
         setFormError = {setFormError}
         change = {change}
+        submit = {submit}
          />} />
       </Routes>
     </div>
