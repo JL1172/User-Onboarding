@@ -6,6 +6,9 @@ import styled from 'styled-components';
 import {keyframes} from 'styled-components';
 
 const kf = keyframes`
+50% {
+    opacity : 0;
+}
 100% {
     opacity : .75;
 }
@@ -31,15 +34,18 @@ background-size: 150% 150%;
 display : flex;
 justify-content : space-around;
 align-items : center;
-animation : ${kf2} 3s ease-in-out forwards;
+animation : ${kf2} 2s ease-in-out forwards;
+img {
+    height : 50px;
+}
 div:nth-of-type(1) {
     text-align : center;
     opacity : 0;
-    animation : ${kf} 8s ease-in-out forwards;
+    animation : ${kf} 4s ease-in-out forwards;
 }
 div:nth-of-type(2) {
     opacity : 0;
-    animation : ${kf} 8s ease-in-out forwards;
+    animation : ${kf} 4s ease-in-out forwards;
     display : flex;
     flex-direction : column;
     align-items : baseline;
@@ -68,9 +74,18 @@ padding : .5rem;
 width : 10.5vw;
 border-radius : 10px;
 height : 50px;
+color : slategray;
+box-shadow : 3px 3px 3px lightseagreen;
+transition : .1s;
 outline : 2px solid lightseagreen;
 &:hover {
-
+    box-shadow : none;
+    outline-offset : 4px;
+    transition : .1s; 
+}
+&:active {
+    transform : scale(1.1);
+    outline-offset : 5px;
 }
 `
 
