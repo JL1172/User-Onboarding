@@ -73,6 +73,7 @@ state: "",}
 
 function App() {
   //!These are the slices of state
+  const [collapse,setCollapse] = useState(true);
   const [disabled, setDisabled] = useState(true);
   const [userInfo, setUserInfo] = useState([]);
   const [formData, setFormData] = useState(initialValue)
@@ -156,7 +157,9 @@ function App() {
           submit={submit}
           select = {select}
         />} />
-        <Route path = "user" element = {<UserInfo userInfo = {userInfo}
+        <Route path = "user" element = {<UserInfo 
+        collapse = {collapse} setCollapse = {setCollapse}
+        userInfo = {userInfo}
          setUserInfo = {setUserInfo} formData = {formData}
         />}/>
         {/* <Route path = "user/:id" element = {<UserInfo
