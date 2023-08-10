@@ -121,59 +121,59 @@ export default function Form(props) {
             <div>
                 <form onSubmit={submit}>
                     <label htmlFor='fname'>First Name :</label>
-                    <input id="fname" name="fname" placeholder='first name'
+                    <input data-cy = "fname" id="fname" name="fname" placeholder='first name'
                         type="text" value={fname} onChange={change} />
-                    {formError.fname && <p style={red}>*{formError.fname}</p>}
+                    {formError.fname && <p data-cy = "fnameErr" style={red}>*{formError.fname}</p>}
 
 
                     <label htmlFor='lname'>Last Name :</label>
-                    <input id="lname" name="lname" value={lname}
+                    <input data-cy = "lname" id="lname" name="lname" value={lname}
                         onChange={change} type='text' placeholder='last name' />
-                    {formError.lname && <p style={red}>*{formError.lname}</p>}
+                    {formError.lname && <p data-cy = "lnameErr" style={red}>*{formError.lname}</p>}
 
                     <label htmlFor='username'>Username :</label>
-                    <input id="username" name="username"
+                    <input data-cy = "username" id="username" name="username"
                         onChange={change} value={username} type="text"
                         placeholder='username' />
-                    {formError.username && <p style={red}>*{formError.username}</p>}
+                    {formError.username && <p data-cy = "usernameErr" style={red}>*{formError.username}</p>}
 
                     <label htmlFor='email'>Email :</label>
-                    <input id="email" name="email"
+                    <input data-cy = "email" id="email" name="email"
                         value={email} onChange={change} type='text'
                         placeholder='email' />
-                    {formError.email && <p style={red}>*{formError.email}</p>}
+                    {formError.email && <p data-cy = "emailErr" style={red}>*{formError.email}</p>}
 
                     <label htmlFor='password'>Password</label>
-                    <input id="password" name="password" placeholder='password'
+                    <input data-cy = "password" id="password" name="password" placeholder='password'
                         value={password} type="password" onChange={change} />
-                    {formError.password && <p style={red}>*{formError.password}</p>}
+                    {formError.password && <p data-cy = "passwordErr" style={red}>*{formError.password}</p>}
 
                     <label htmlFor='lanuage'>What is your favorite programming language? </label>
-                    <select onChange={change} value={language} id="language" name="language">
+                    <select data-cy = "language" onChange={change} value={language} id="language" name="language">
                         <option value="">--Select One--</option>
                         {programmingLanguages.map((lang, i) => {
                             return <option value={lang} key={i}>{lang}</option>
                         })}
                     </select>
-                    {formError.language && <p style={red}>*{formError.language}</p>}
+                    {formError.language && <p data-cy = "languageErr" style={red}>*{formError.language}</p>}
 
                     <label htmlFor='state'>What state are you from?</label>
-                    <select id="state" value={state} onChange={change} name="state">
+                    <select data-cy = "state" id="state" value={state} onChange={change} name="state">
                         <option value="">--Select One--</option>
                         {newArray.map((state, i) => {
                             return <option key={i} value={state}>{state}</option>
                         })}
                     </select>
-                    {formError.state && <p style={red}>*{formError.state}</p>}
+                    {formError.state && <p data-cy = "stateErr" style={red}>*{formError.state}</p>}
 
                     <label htmlFor='terms'>Terms and Conditions</label>
-                    <input id="terms" type='checkbox' name="terms"
+                    <input data-cy = "terms" id="terms" type='checkbox' name="terms"
                         checked={terms} onChange={change} />
-                    {formError.terms && <p style={red}>*{formError.terms}</p>}
+                    {formError.terms && <p data-cy = "termsErr" style={red}>*{formError.terms}</p>}
 
-                    <input type="submit" disabled={disabled}></input>
-                     {select && <Alert style = {redBack}>Cannot sign in until you sign out</Alert>}
-                    {select && <button onClick={leave} disabled = {false}>Log Out</button>}
+                    <input data-cy = "submit" type="submit" disabled={disabled}></input>
+                     {select && <Alert data-cy = "disabledErr" style = {redBack}>Cannot sign in until you sign out</Alert>}
+                    {select && <button data-cy = "logout" onClick={leave} disabled = {false}>Log Out</button>}
                     
                 </form>
             </div>

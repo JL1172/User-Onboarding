@@ -41,11 +41,11 @@ a:nth-of-type(2):hover {
 
 const schema = yup.object().shape({
   fname: yup.string().matches(/^[A-za-z]*$/, "Must only be letters")
-    .required("First name is required").min(3, "First name must be 3 charaters or more"),
+    .required("First name is required").min(3, "First name must be 3 characters or more"),
 
   lname: yup.string().required("Last name is required")
     .matches(/^[A-za-z]*$/, "Must only be letters")
-    .min(3, "Last name must be 3 charaters or more"),
+    .min(3, "Last name must be 3 characters or more"),
 
   email: yup.string().email("Must be a valid email address").required("Email is required"),
 

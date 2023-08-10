@@ -25,7 +25,7 @@ function Home() {
       </div>
       <div>
         <h1 style = {{marginRight : "-7rem"}}>Login Here</h1>
-        <StyledButton onClick={nav}>Login</StyledButton>
+        <StyledButton  data-cy = "login" onClick={nav}>Login</StyledButton>
       </div>
     </StyledDiv>
   );
