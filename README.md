@@ -1,5 +1,9 @@
 # Module Project: Advanced Form Management - User Onboarding
 
+I utilized React, React-Router, ReactStrap, Bootstrap, and Styled-components for the styling and the framework.
+I then used yup for validation on my form and axios to post form data onto a small user interface. This application only allows one user at a time and has a logout feature in order to return to the sign in screen.
+In my Tests-Cypress repo, I have all the relevant E-2-E tests written comprehensively. 
+
 ## Project Description
 
 We've seen many different styles of form management by now -- simple to complex. Today we are going to unleash your inner form-wizard! 🧙
