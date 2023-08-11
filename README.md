@@ -1,69 +1,41 @@
-# Module Project: Advanced Form Management - User Onboarding
+#User-Onboarding 
+This project utilizes advanced form management to achieve creating a simple, yet highly functioning user-onboarding process.
+
+#Motivation
+I created this project out of wanting to challenge myself to have a more dynamic UI and UX. Additionally, I wanted to simulate the process of a new user. This project deals with the first steps of any user; signing up, and being directly to a page with their information. From that point whatever service is being provided can easily be infused in the code.
+
+I love taking the time to make something look really professional and well-done. This project was a blast to make start to finish. It was a fun challenge and I can't wait to add more to it.
 
 I utilized React, React-Router, ReactStrap, Bootstrap, and Styled-components for the styling and the framework.
 I then used yup for validation on my form and axios to post form data onto a small user interface. This application only allows one user at a time and has a logout feature in order to return to the sign in screen.
 In my Tests-Cypress repo, I have all the relevant E-2-E tests written comprehensively. 
 
-## Project Description
+#Code Style
+ESLINT
 
-We've seen many different styles of form management by now -- simple to complex. Today we are going to unleash your inner form-wizard! 🧙
+#Tech/framework 
+Built with React
+Utilized React-Router for the Nav
+Styled-Components, Bootstrap, and Reactstrap for the styling
+Axios for post requests
+yup for form validation
+Cypress.io for the E2E testing
 
-## Instructions
+#Installation 
+All dependencies are already installed, so all you have to do is : 
+1. Fork the repo
+2. open your cli
+3. git clone the repo
+4. once it is done cloning, npm install
+5. npm run start
+6. Happy coding!!
 
-### Task 1: Set Up The Project
+#Credits 
+Thank you to all my amazing instructors at BloomTech for inspiring me to excel and teaching me so much!
 
-- [ ] Fork and clone the repository and `cd` into the directory.
-- [ ] Start off by installing a blank React app by running `npx create-react-app user-onboarding`.
-- [ ] `cd` into the newly created `user-onboarding` folder.
-- [ ] Using `npm`, add the following as dependencies inside your React app:
-  - `yup`
-  - `axios`
-- [ ] Create a component file called `Form.js`, import it into your `App.js` file, and place the component in your JSX there.
+#Licence 
+MIT JL1172
 
-### Task 2: MVP
 
-#### Create Your Advanced Form
 
-We want to create a form to onboard a new user to our system. We need _at least_ the following pieces of information about our new user:
 
-- [ ] Name (first_name, last_name)
-- [ ] Email
-- [ ] Password
-- [ ] Terms of Service (checkbox)
-- [ ] A Submit button to send our form data to the server.
-
-#### Implement Form Validation and Error Messaging
-
-Form validation is one of the facets of an application that makes it feel polished and controlled from a user perspective. With that in mind, implement the following:
-
-- [ ] Using Yup, set up _at least_ two different validations along with custom error messages that will display on screen when validation fails.
-
-#### Make a POST Request
-
-Being able to `POST` data is a key skill of any developer, no matter your skill level.
-
-- [ ] Craft a `POST` request using `axios` that sends your form data to the following endpoint: _`https://reqres.in/api/users`_
-- [ ] Verify using a `console.log()` that you are receiving a successful response back
-
-(Note: For those that are curious, we're using [reqres.in](https://reqres.in/) for this assignment's API. It's a free API that allows us to simulate a `POST` request for any data that we send it. Pretty awesome!)
-
-#### Display Returned Data to Screen
-
-When you get your data back, you will want to do something with it, right? Let's display a list of users in our app.
-
-- [ ] Set up a state property called `users` that is initialized with an empty array
-- [ ] Every time you make a `POST` request, and get that new user data back, update your `users` state with the new user added to the array
-- [ ] Render `users` in your app. You can use the html pre tag and JSON.stringify() method to display your post request.
-
-### Task 3: Stretch Goals
-
-The following are stretch goals that you should attempt _after_ you meet MVP for your project:
-
-- [ ] Add basic styling to your form in your app. Make it look pretty with any styling method you choose.
-- [ ] Implement a dropdown menu in your form. Add a `role` value to your state and add a dropdown with different roles for your users.
-- [ ] Create 3 new inputs inside your form of your choice along with corresponding validation and error messaging
-- [ ] Add to your existing handling so that, if a user inputs their email as `waffle@syrup.com`, they receive an error message in their form that says _"That email is already taken."_
-
-## Submission Format
-
-* [ ] Submit a link to your github repository in canvas.
