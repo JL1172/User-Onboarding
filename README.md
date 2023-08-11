@@ -36,7 +36,7 @@ All dependencies are already installed, so all you have to do is :
 ## Credits 
 Thank you to all my amazing instructors at BloomTech for inspiring me to excel and teaching me so much!
 
-### Licence 
+### License 
 MIT JL1172
 
 
