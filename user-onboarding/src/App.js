@@ -53,7 +53,7 @@ const schema = yup.object().shape({
     .min(5, "Username must be 5 characters or more")
     .matches(/[^A-Za-z]+$/, "Username must end with at least one number"),
 
-  password: yup.string().required("Password is required").min(6, "Must be 6 or more")
+  password: yup.string().required("Password is required").min(6, "Must be 6 or more in length")
     .matches(/[^0-9a-zA-Z]+/, "Must use at least one special character"),
 
   terms: yup.boolean().oneOf([true], "Must agree to terms and conditions to proceed"),
@@ -141,8 +141,8 @@ function App() {
   return (
     <div>
       <Styled>
-      <Link to="/"><ImgStyle src={menuUrl} /></Link>
-      {isVisible && <Link style={styleForLink} to = {`user`}>User {userInfo.fname}</Link>}
+      <Link to="/"><ImgStyle data-cy = "menuIcon"src={menuUrl} /></Link>
+      {isVisible && <Link data-cy = "userLink" style={styleForLink} to = {`user`}>User {userInfo.fname}</Link>}
       </Styled>
       <Routes>
         <Route path="/" element={<Home />} />

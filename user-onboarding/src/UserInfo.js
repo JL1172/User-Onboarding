@@ -66,12 +66,12 @@ export default function UserInfo(props) {
         <Div collapse = {collapse}>
             <div>
             <Card>
-                <div style = {style} onClick={expandOrCollapse}>{status}{imgChoice}</div>
-                {userInfo[0].fname && userInfo.lname && <CardTitle>Name : {userInfo[0].fname} {userInfo[0].lname}</CardTitle>}
-                { userInfo[0].email && <CardTitle>Email : {userInfo[0].email} </CardTitle>}
-                { userInfo[0].username && <CardTitle>Username : {userInfo[0].username}</CardTitle>}
-                { userInfo[0].language && <CardTitle>Favorite Programming Language : {userInfo[0].language}</CardTitle>}
-                { userInfo[0].state && <CardTitle>Location : {userInfo[0].state}</CardTitle>}
+                <div data-cy = "expandOrCollapse" style = {style} onClick={expandOrCollapse}>{status}{imgChoice}</div>
+                {userInfo[0].fname && userInfo[0].lname && <CardTitle data-cy = "nameCard"  >Name : {userInfo[0].fname} {userInfo[0].lname}</CardTitle>}
+                { userInfo[0].email && <CardTitle data-cy = "emailCard" >Email : {userInfo[0].email} </CardTitle>}
+                { userInfo[0].username && <CardTitle  data-cy = "usernameCard" >Username : {userInfo[0].username}</CardTitle>}
+                { userInfo[0].language && <CardTitle  data-cy = "languageCard">Favorite Programming Language : {userInfo[0].language}</CardTitle>}
+                { userInfo[0].state && <CardTitle  data-cy = "stateCard" >Location : {userInfo[0].state}</CardTitle>}
             </Card>
             </div>
         </Div>
