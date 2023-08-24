@@ -71,7 +71,8 @@ div:nth-of-type(2) {
 const StyledButton = styled.button`
 border : none;
 padding : .5rem;
-width : 10.5vw;
+/* width : 10.5vw; */
+width : 10rem;
 border-radius : 10px;
 height : 50px;
 color : slategray;

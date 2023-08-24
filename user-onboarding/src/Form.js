@@ -23,7 +23,7 @@ h1 {
 }
 div {
     border-radius : 15px;
-    width : 40%;
+    width : 40rem;
     min-height : 70%;
     max-height : fit-content;
     background-color : azure;
@@ -37,6 +37,7 @@ div {
         margin-bottom : 2rem;
         border-radius : 5px;
         border : 1px solid lightseagreen;
+        width : 10rem;
         &:focus {
             outline : 1px solid lightseagreen;
         }
